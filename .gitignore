@@ -1,0 +1,62 @@
+# Build output
+dist/
+
+# Astro generated types and cache
+.astro/
+
+# Dependencies
+node_modules/
+
+# Package manager caches (local project installs)
+.npm-cache/
+.npm/
+.pnpm-store/
+.yarn/
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea/
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# Cursor local state
+.cursor/
+
+# Cloudflare (Phase 0 deploy)
+.wrangler/
+.dev.vars
+
+# Other deploy tooling
+.vercel/
+.netlify/
+
+# Test / coverage
+coverage/
+
+# TypeScript / tooling
+*.tsbuildinfo

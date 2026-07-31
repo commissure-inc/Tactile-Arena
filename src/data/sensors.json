@@ -1,0 +1,1495 @@
+[
+  {
+    "slug": "gelsight-mini",
+    "company": "GelSight",
+    "product": "GelSight Mini",
+    "website": "https://www.gelsight.com/products/gelsightmini/",
+    "imageUrl": "https://www.gelsight.com/wp-content/uploads/2022/09/gsmini-hero-square.png",
+    "datasheetUrl": "https://www.gelsight.com/wp-content/uploads/productsheet/Mini/GS_Mini_Product_Sheet_10.07.24.pdf",
+    "country": "US",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "8MP RGB tactile image (UVC stream)",
+    "busInterfaces": [
+      "USB",
+      "UVC"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "ros2"
+    ],
+    "samplingRate": {
+      "display": "25 fps",
+      "hz": 25,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "Vendor: mm-level 3D surface data; no single µm figure on current sheet (older sheets said micron-level; FAQ cites ~0.1 mm / 0.0634 mm/px downsampled)"
+    },
+    "dimensions": {
+      "display": "32 × 28 × 24.5 mm",
+      "longestMm": 32
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "500-2k",
+    "priceBasis": "list",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "High-resolution shape and texture measurement, insertion detection",
+    "notes": "Retail Mini System $510; Robotics Package $560 (includes Tracking Marker Gel). Product sheet: 8MP camera @ 25 fps, FOV 18.6×14.3 mm. Marker gel + SDK enable shear/slip estimation; catalog shearSensing stays none without triaxial_force_map.",
+    "sources": [
+      "https://www.gelsight.com/products/gelsightmini/",
+      "https://www.gelsight.com/wp-content/uploads/productsheet/Mini/GS_Mini_Product_Sheet_10.07.24.pdf",
+      "https://www.gelsight.com/product/gelsight-mini-system/",
+      "https://www.gelsight.com/product/gelsight-mini-robotics-package/",
+      "https://github.com/gelsightinc/gsrobotics"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "digit",
+    "company": "Meta AI (FAIR)",
+    "product": "DIGIT",
+    "website": "https://digit.ml/digit.html",
+    "imageUrl": "https://www.gelsight.com/wp-content/uploads/2022/09/GelSight_Online-Store_Image_DIGIT-450x450.png",
+    "country": "US",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "RGB tactile image; VGA 640×480 @ up to 30 fps, QVGA 320×240 @ up to 60 fps",
+    "busInterfaces": [
+      "USB",
+      "UVC"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "samplingRate": {
+      "display": "60 fps max (QVGA 320×240); 640×480 @ 30 fps",
+      "hz": 60,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "dimensions": {
+      "display": "20 × 27 × 18 mm",
+      "longestMm": 27
+    },
+    "weight": {
+      "display": "20 g",
+      "grams": 20
+    },
+    "availability": "in-production",
+    "openness": "open-hardware",
+    "license": "CC-BY-NC-4.0",
+    "priceRange": "100-500",
+    "priceBasis": "list",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Low-cost in-hand manipulation, sim-to-real research",
+    "notes": "Open hardware (CC BY-NC-4.0; design + interface repos now archived). Sold via GelSight ($355, ~4-week lead time). digit.ml homepage now features Digit 360; specs here are for the original DIGIT (RA-L 2020).",
+    "sources": [
+      "https://arxiv.org/abs/2005.14679",
+      "https://digit.ml/digit.html",
+      "https://www.gelsight.com/product/digit-tactile-sensor/",
+      "https://github.com/facebookresearch/digit-design",
+      "https://github.com/facebookresearch/digit-interface"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "reskin",
+    "company": "Meta AI / CMU",
+    "product": "ReSkin",
+    "website": "https://reskin.dev/",
+    "imageUrl": "https://reskin.dev/resources/teaser.png",
+    "country": "US",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "aggregate",
+    "sensingPrinciples": [
+      "hall-magnetic"
+    ],
+    "output": "3D force / shear estimates via magnetic flux",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "samplingRate": {
+      "display": "up to 400 Hz",
+      "hz": 400,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "1 mm (90% accuracy, research prototype)",
+      "mm": 1,
+      "kind": "localization-error"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Replaceable tactile skin for high-frequency contact sensing",
+    "notes": "Research platform; not a commercial product. Magnetic elastomer skin streams via onboard MCU over USB.",
+    "sources": [
+      "https://reskin.dev/",
+      "https://arxiv.org/abs/2111.00071",
+      "https://ai.meta.com/blog/reskin-a-versatile-replaceable-low-cost-skin-for-ai-research-on-tactile-perception/",
+      "https://github.com/raunaqbhirangi/reskin_sensor"
+    ],
+    "lastUpdated": "2026-07-27",
+    "dimensions": {
+      "display": "20 × 20 mm sensing area, 2–3 mm thick (board ~20 × 29 mm)"
+    },
+    "license": "MIT"
+  },
+  {
+    "slug": "xela-uskin",
+    "company": "XELA Robotics",
+    "product": "uSkin",
+    "website": "https://xelarobotics.com/products/",
+    "imageUrl": "https://xelarobotics.com/wp-content/uploads/2025/12/cover-uspa-44.jpg",
+    "datasheetUrl": "https://xelarobotics.com/wp-content/uploads/2025/12/uSPa22_and_below_Specsheet_Oct_2024.pdf",
+    "country": "JP",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map",
+      "temperature"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "hall-magnetic"
+    ],
+    "output": "Per-taxel 3-axis normal and shear force",
+    "busInterfaces": [
+      "CAN"
+    ],
+    "softwareSupport": [
+      "vendor-gui",
+      "ros",
+      "ros2"
+    ],
+    "samplingRate": {
+      "display": "125–500 Hz (uSPa11/21/22; uSPa44 ≈133 Hz, uSPa46 ≤83 Hz)",
+      "hz": 500,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "4.7 mm taxel pitch (uSPa series; varies by model)",
+      "mm": 4.7,
+      "kind": "taxel-pitch"
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Dexterous manipulation with distributed normal/shear sensing",
+    "notes": "Tokyo-based spin-out from Waseda University (2018). Modular uSPa/uSCu/uSPr/uSMu series; host bus is CAN (CAN-USB typical). xela.us is no longer the company site.",
+    "sources": [
+      "https://xelarobotics.com/products/",
+      "https://xelarobotics.com/wp-content/uploads/2025/12/uSPa22_and_below_Specsheet_Oct_2024.pdf",
+      "https://xelarobotics.com/wp-content/uploads/2025/12/XELA-Robotics-Product-Catalog-2025-EN.pdf",
+      "https://xelarobotics.com/about/",
+      "https://xela.lat-d5.com/"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "syntouch-biotac-sp",
+    "company": "SynTouch (dissolved 2024)",
+    "product": "BioTac SP",
+    "website": "https://web.archive.org/web/20200215000000/http://www.syntouchllc.com/Products/BioTac-SP/",
+    "datasheetUrl": "https://web.archive.org/web/20151223130757/http://www.syntouchllc.com/Products/BioTac-SP/_media/BioTac_SP_Product_Manual.pdf",
+    "country": "US",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map",
+      "vibration",
+      "temperature",
+      "contact_geometry"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "fluid-biomimetic"
+    ],
+    "output": "24-electrode impedance map (normal/shear/contact geometry), PDC + PAC (fluid pressure / vibration), thermistor TDC/TAC",
+    "busInterfaces": [
+      "SPI"
+    ],
+    "softwareSupport": [
+      "ros"
+    ],
+    "samplingRate": {
+      "display": "Up to 2.2 kHz (PAC vibration); ~73 Hz electrodes/PDC/thermal (default 4.4 kHz sequence)",
+      "hz": 2200,
+      "kind": "channel",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "24 impedance electrodes over biomimetic fingertip (contact localization)"
+    },
+    "availability": "discontinued",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Human-like fingertip sensing for grasp stability and texture (legacy/used units only)",
+    "notes": "SynTouch dissolved in December 2024; no longer available new. Original domain no longer hosts product pages — links point to archived copies. Native interface is SPI; EtherCAT applied only to the Shadow Hand integrated system. 24 impedance electrodes measure distributed contact forces (not 6-axis F/T).",
+    "sources": [
+      "https://web.archive.org/web/20200215000000/http://www.syntouchllc.com/Products/BioTac-SP/",
+      "https://web.archive.org/web/20151223130757/http://www.syntouchllc.com/Products/BioTac-SP/_media/BioTac_SP_Product_Manual.pdf"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "syntouch-numatac",
+    "company": "SynTouch (dissolved 2024)",
+    "product": "NumaTac",
+    "website": "https://web.archive.org/web/20251213215543/https://www.syntouchllc.com/Products/NumaTac/",
+    "country": "US",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "vibration"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "fluid-biomimetic"
+    ],
+    "output": "Single-channel DC air pressure (PDC; permeable skin, not steady-state force) and microvibration (PAC) from sealed open-cell foam; cannot resolve contact location or direction",
+    "busInterfaces": [
+      "SPI"
+    ],
+    "softwareSupport": [
+      "vendor-gui",
+      "c-cpp-sdk"
+    ],
+    "availability": "discontinued",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Contact/collision detection and fragile grasping on custom moldable foam coverings (legacy/used units only)",
+    "notes": "SynTouch dissolved in December 2024; no longer available new. Air-filled open-cell foam with pressure transducer (US9080918B2), derived from BioTac technology; moldable into complex shapes. No spatial force map or force vector output.",
+    "sources": [
+      "https://web.archive.org/web/20251213215543/https://www.syntouchllc.com/Products/NumaTac/",
+      "https://web.archive.org/web/20150714220038/http://syntouchllc.com:80/Products/NumaTac/_media/NumaTac_Product_Manual.pdf",
+      "https://patents.google.com/patent/US9080918B2",
+      "https://web.archive.org/web/20260119110455/https://www.syntouchllc.com/Media/Publications/_publications/2014_Matulevich_MEC.pdf"
+    ],
+    "lastUpdated": "2026-07-27",
+    "datasheetUrl": "https://web.archive.org/web/20150714220038/http://syntouchllc.com:80/Products/NumaTac/_media/NumaTac_Product_Manual.pdf"
+  },
+  {
+    "slug": "pps-tactarray",
+    "company": "Pressure Profile Systems",
+    "product": "TactArray",
+    "website": "https://pressureprofile.com/sensors/tactarray",
+    "imageUrl": "https://static1.squarespace.com/static/5b6af56a96d455ed3c06b55a/t/646618476cc44a037a286394/1684412487457/tactile-sensor-pressure+mapping-system-cta-tactarray.jpg?format=1500w",
+    "country": "US",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "normal_force_map"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "capacitive"
+    ],
+    "output": "2D pressure map (via T4500/T5000 electronics and Chameleon software)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "~7–10 Hz (Conformable TactArray datasheet; vendor labels “element to element”); model dependent (STA ~10–69 Hz)",
+      "hz": 10,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "Element size as small as 1×2 mm (FAQ); CTA typical 2×2–10×10 mm",
+      "mm": 1,
+      "kind": "taxel-pitch"
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Grasp force distribution, ergonomic and grip analysis",
+    "notes": "Multiple sensors can be integrated into one measurement system. Used in industrial and research settings. Sister product DigiTacts offers direct SPI/I2C output.",
+    "sources": [
+      "https://pressureprofile.com/sensors/tactarray",
+      "https://pressureprofile.com/resources/frequently-asked-questions"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "tekscan-pressure-mapping",
+    "company": "Tekscan",
+    "product": "Pressure Mapping Sensors (I-Scan family)",
+    "website": "https://www.tekscan.com/pressure-mapping-sensors",
+    "imageUrl": "https://www.tekscan.com/sites/default/files/pressure-mapping-sensors-group.jpg",
+    "country": "US",
+    "formFactor": "sheet",
+    "productType": "sensor",
+    "modalities": [
+      "normal_force_map"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "piezoresistive"
+    ],
+    "output": "2D pressure map (I-Scan system; .NET API — C#/MATLAB/LabVIEW/VB samples)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "matlab",
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "Up to 100 Hz standard; high-speed configs to 20 kHz",
+      "hz": 20000,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "Down to 0.6 mm sensel pitch (up to 248 sensels/cm²; sheet dependent)",
+      "mm": 0.6,
+      "kind": "taxel-pitch"
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "procurement": {
+      "japanDistributor": "Nitta Corporation (sold as I-SCAN / HIGH SPEED I-SCAN)"
+    },
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Contact pressure profiling for grippers and fixtures",
+    "notes": "Category entry: 200+ sensor sheets (~0.1 mm thick) plus I-Scan electronics, not a single SKU. Common in industrial QA. In Japan the same technology is sold and supported by Nitta as I-SCAN (EVO/Evolution handle, up to 100 Hz, ~2,000 sensing points, 8-bit) and HIGH SPEED I-SCAN (VersaTek handle, up to 730 Hz, 8,000+ points); Nitta also handles FlexiForce and states that its sheet line-up follows Tekscan's, so it is a channel rather than a separate design.",
+    "sources": [
+      "https://www.tekscan.com/pressure-mapping-sensors",
+      "https://www.tekscan.com/products-solutions/systems/i-scan-system",
+      "https://www.nitta.co.jp/product/sensor/I-SCAN/",
+      "https://www.nitta.co.jp/product/sensor/hi-speed_i-scan/"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "nissha-shear-force",
+    "company": "NISSHA",
+    "product": "Friction / Shear Force Mapping System (RK1A, 310S)",
+    "website": "https://connect.nissha.com/filmdevice/shear-force-sensor/",
+    "imageUrl": "https://connect.nissha.com/filmdevice/wp-content/uploads/2025/02/img_shear-force-sensor30r-1.png",
+    "country": "JP",
+    "formFactor": "sheet",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "capacitive"
+    ],
+    "output": "Per-point Fx/Fy/Fz across the whole sheet, in N, kPa or mmHg. RK1A rated 20–400 kPa (Fz) and 10–120 kPa (Fx, Fy); 310S 4–400 kPa (Fz) and 2–200 kPa (Fx, Fy). Windows viewer shows arrow, matrix, statistics and centre-of-pressure views and exports CSV time series",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "3–300 Hz (RK1A); 1–100 Hz (310S)",
+      "hz": 300,
+      "kind": "frame",
+      "qualifier": "configurable"
+    },
+    "spatialResolution": {
+      "display": "RK1A: 11 × 11 points over 44 × 66 mm (4 × 6 mm pitch); 310S: 576 points (24 × 24) over 312 × 312 mm (13 mm pitch)",
+      "mm": 4,
+      "kind": "taxel-pitch"
+    },
+    "dimensions": {
+      "display": "RK1A sheet 44 × 66 mm sensing area, 0.8 mm thick; 310S sheet 312 × 312 mm, 4.2 mm thick",
+      "longestMm": 312
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "over-10k",
+    "priceBasis": "street",
+    "procurement": {
+      "japanDistributor": "Sugino Eichi (measurement-system integration)"
+    },
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Multi-point shear and friction distribution measurement over a flat or gently curved surface",
+    "notes": "One of the very few commercial sheet sensors that resolves all three force axes at every point. Printed capacitive film (patent JP7583782: XYZ force from capacitance change between electrode layers), sold under the Nissha SenseEvolve brand. 310S launched Feb 2025 with USB-C power and trigger in/out for camera and motion-capture sync; RK1A is smaller, is offered for sale or paid rental, and is still flagged 開発品 (development item). Price band is the Japanese distributor's budget figure for the 310S (from ¥2M); the RK1A is not publicly priced. Windows-only GUI, no published SDK or ROS driver, 5–30 °C, not waterproof, sold to companies and research institutions only. A <1 mm thick 3 mm-pitch robot-fingertip variant is shown as a development item.",
+    "sources": [
+      "https://connect.nissha.com/filmdevice/shear-force-sensor/",
+      "https://connect.nissha.com/filmdevice/en/shear-force-sensor/demokit/",
+      "https://connect.nissha.com/filmdevice/shear-force-sensor/products/standard01/",
+      "https://www.nissha.com/news/2026/04/15_033.html",
+      "https://www.sugino-h.com/3axis-mat"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "shokac-cube",
+    "company": "Touchence / Sekisui Polymatech",
+    "product": "Shokac Cube",
+    "website": "https://www.polymatech.co.jp/products/tactile-cube/",
+    "imageUrl": "https://www.polymatech.co.jp/wp-content/uploads/2024/10/0004.jpg",
+    "country": "JP",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "optical-intensity"
+    ],
+    "output": "16-point (4 × 4) surface indentation map over a 32 × 32 mm sponge, read as SMBus registers; 12 mm rated travel at 0.3 mm resolution, with on-board auto-calibration that compensates sponge ageing. Tilt and pinch direction are inferred from the point pattern; no calibrated force output",
+    "busInterfaces": [
+      "I2C",
+      "USB"
+    ],
+    "softwareSupport": [
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "Specified at 100 Hz operation (no maximum frame rate published); 15 ms sponge recovery time",
+      "hz": 100,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "4 × 4 points over 32 × 32 mm (8 mm pitch); 0.3 mm displacement resolution, ±15% F.S. on a flat press",
+      "mm": 8,
+      "kind": "taxel-pitch"
+    },
+    "dimensions": {
+      "display": "32 × 32 × 24.5 mm (CUBI-001-1 SD); sensing block 32 × 32 × 20 mm",
+      "longestMm": 32
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "under-100",
+    "priceBasis": "street",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Low-cost compliant multi-point contact sensing for robot covers, fingertips and grippers",
+    "notes": "Soft optical displacement sensor: an NBR sponge between an LED and a phototransistor changes density under compression, so the photocurrent tracks indentation. Family: CUBI-001-1 SD, CUBI-003-1 TN (thin) and CUBI-002-1 FP (FPC, curved mounting) are 4 × 4 over I2C; CUBRS-001-1 RT is a 4 × 2 robot fingertip over RS485; the smaller Shokac Pot is 4 points over I2C or UART. Rated load 28 N, breaking load 1000 N, 3.3 V at 9.4 mA when running at 100 Hz. The EBI-001-1 accessory bridges four sensors from I2C to USB with a Windows GUI and CSV logging, and units chain by cable to cover larger areas. Touchence transferred the business to Sekisui Chemical in March 2024, so it is now quoted by Sekisui Polymatech; the ¥12,527 price is the last Japanese retail listing, which has since ended.",
+    "sources": [
+      "https://www.polymatech.co.jp/products/tactile-cube/",
+      "http://touchence.jp/products/cube.html",
+      "https://eleshop.jp/shop/g/gJ3S123/",
+      "http://touchence.jp/news/"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "anyskin",
+    "company": "NYU / open research",
+    "product": "AnySkin",
+    "website": "https://any-skin.github.io/",
+    "imageUrl": "https://any-skin.github.io/static/images/preview.jpg",
+    "country": "US",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "aggregate",
+    "sensingPrinciples": [
+      "hall-magnetic"
+    ],
+    "output": "5×3-axis magnetic flux via magnetized elastomer and magnetometers (normal/shear-related deformation)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "samplingRate": {
+      "display": "100 Hz",
+      "hz": 100,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Rapid prototyping of replaceable tactile skins",
+    "notes": "NYU GRAIL 主導のオープン磁気スキン（CMU/Columbia/Meta 共著）。DIY（CAD/PCB/PyPI）に加え、公式サイトが WowRobo 製商用キット（WowSkin、標準約 $128）とサンプル申請を案内。",
+    "sources": [
+      "https://any-skin.github.io/",
+      "https://arxiv.org/abs/2409.08276",
+      "https://pypi.org/project/anyskin/",
+      "https://github.com/raunaqbhirangi/anyskin",
+      "https://shop.wowrobo.com/products/enhanced-anyskin-premium-crafted-editionwowskin"
+    ],
+    "lastUpdated": "2026-07-27",
+    "license": "MIT"
+  },
+  {
+    "slug": "tactip",
+    "company": "Bristol Robotics Laboratory",
+    "product": "TacTip",
+    "website": "https://softroboticstoolkit.com/tactip",
+    "imageUrl": "https://softroboticstoolkit.com/sites/g/files/omnuum4601/files/styles/hwp_1_1__1440x1440_scale/public/srtsandbox/files/tactip_figure2.png?itok=JtsGeLt9",
+    "country": "GB",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry",
+      "triaxial_force_map"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "Internal pin/marker (x,y) displacement → contact geometry, force/torque cues, and shear",
+    "busInterfaces": [
+      "USB",
+      "UVC"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Soft optical tactile sensing for research prototypes",
+    "notes": "Open hardware (STL/CAD on Soft Robotics Toolkit); 3D-printed body with internal webcam tracking pin deflections. Assembled units by email quote; DIY BOM published on SRT fabrication page.",
+    "sources": [
+      "https://softroboticstoolkit.com/tactip",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC5905869/",
+      "https://www.bristol.ac.uk/research/groups/tactile-robotics/",
+      "https://arxiv.org/abs/2105.14455"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "contactile",
+    "company": "Contactile",
+    "product": "3DFBS (3D Force Button Sensor)",
+    "website": "https://contactile.com/3dfbs/",
+    "imageUrl": "https://contactile.com/wp-content/uploads/2026/05/14C-14T_Flipped-scaled.png",
+    "datasheetUrl": "https://contactile.com/wp-content/uploads/2026/05/3DFBS-XXX-XXN-FXXX_Datasheet_Rev_1.pdf",
+    "country": "AU",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "aggregate",
+    "sensingPrinciples": [
+      "optical-intensity"
+    ],
+    "output": "Calibrated single-taxel 3-axis force (Fx, Fy shear + Fz compression) in newtons; rate-of-change and contact/threshold triggers; Idle (poll) or Active (stream) modes",
+    "busInterfaces": [
+      "I2C",
+      "SPI",
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "c-cpp-sdk",
+      "ros",
+      "ros2",
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "Up to 1 kHz",
+      "hz": 1000,
+      "kind": "channel",
+      "qualifier": "max"
+    },
+    "dimensions": {
+      "display": "Family: 10 / 12 / 14 mm sensing area; e.g. 14.0 × 19.0 × 3.6 mm (14T/14C)",
+      "longestMm": 19
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Compact 3-axis force sensing for robotic fingertips, phalanges, palms, prosthetics, and OEM integration",
+    "notes": "Australian startup (Sydney). Single-taxel optical silicone-pillar sensor in aluminum housing. 18-variant family: 3 sensing areas × 2 mounting options × 3 force ranges (12 N / 20 N / 50 N Z-range). Native I2C/SPI; USB-C host path via optional DEV board. Kit typically includes sensor, breakout board, and jumper cables; visualiser plus C++/Python/ROS/ROS2 libraries available with the DEV board.",
+    "sources": [
+      "https://contactile.com/3dfbs/",
+      "https://contactile.com/wp-content/uploads/2026/05/3DFBS-XXX-XXN-FXXX_Datasheet_Rev_1.pdf",
+      "https://contactile.com/products/",
+      "https://contactile.com/manuals/"
+    ],
+    "lastUpdated": "2026-07-31"
+  },
+  {
+    "slug": "digit-360",
+    "company": "Meta AI (FAIR) / GelSight",
+    "product": "Digit 360",
+    "website": "https://digit.ml/digit360.html",
+    "imageUrl": "https://digit.ml/assets/images/digit360/digit360_modalities.png",
+    "country": "US",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry",
+      "vibration",
+      "temperature"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "Multi-modal touch (~8.3M taxels); spatial features to ~7 µm; forces to ~1 mN; on-device AI processing",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "ros2"
+    ],
+    "spatialResolution": {
+      "display": "~7 µm",
+      "mm": 0.007,
+      "kind": "surface-pixel"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "High-fidelity multi-modal fingertip sensing for dexterous manipulation research",
+    "notes": "Hemispherical multimodal successor to DIGIT. Design/firmware/software published (CC-BY-NC-4.0) at facebookresearch/digit360. GelSight to manufacture/distribute; as of 2026-07 not listed in GelSight store. Early access via Meta Call for Proposals (proposals due 2025-01-20; acceptance listed as in progress). Force figures (~1 mN) are evaluation/ML estimates from visuotactile images, not a native dense force-map stream.",
+    "sources": [
+      "https://digit.ml/digit360.html",
+      "https://arxiv.org/pdf/2411.02479"
+    ],
+    "lastUpdated": "2026-07-27",
+    "license": "CC-BY-NC-4.0"
+  },
+  {
+    "slug": "9dtact",
+    "company": "Shanghai Qi Zhi Institute / Tsinghua (open research)",
+    "product": "9DTact",
+    "website": "https://github.com/linchangyi1/9DTact",
+    "imageUrl": "https://raw.githubusercontent.com/linchangyi1/9DTact/main/source/pipelie.png",
+    "country": "CN",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry",
+      "net_force_torque"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "3D shape reconstruction + markerless 6D force estimation from white-light tactile images",
+    "busInterfaces": [
+      "USB",
+      "CSI"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "ros"
+    ],
+    "samplingRate": {
+      "display": "90 fps",
+      "hz": 90,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "0.0462 mm MAE (3D depth reconstruction)",
+      "mm": 0.0462,
+      "kind": "depth-error"
+    },
+    "dimensions": {
+      "display": "32.5 × 25.5 × 25.5 mm",
+      "longestMm": 32.5
+    },
+    "weight": {
+      "display": "20 g",
+      "grams": 20
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "MIT",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Compact DIY visuotactile sensing with shape and 6D force for grippers and hands",
+    "notes": "Fully open-source (MIT); DIY build cost ~$15 incl. molds. Assembled kits sold separately (Taobao). ROS 1 tooling; builds on DTact optical principles. Shanghai Qi Zhi Institute / Tsinghua IIIS.",
+    "sources": [
+      "https://github.com/linchangyi1/9DTact",
+      "https://linchangyi1.github.io/9DTact/",
+      "https://arxiv.org/abs/2308.14277"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "fingervision",
+    "company": "FingerVision Inc.",
+    "product": "α on β",
+    "website": "https://www.fingervision.jp/en/service-product",
+    "imageUrl": "https://static.wixstatic.com/media/65b028_c9c2bd1bc663492390a43c8df36e4ba1~mv2.jpeg/v1/fill/w_648,h_398,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%CE%B1on%CE%B2.jpeg",
+    "country": "JP",
+    "formFactor": "fingertip",
+    "productType": "gripper",
+    "modalities": [
+      "contact_geometry",
+      "triaxial_force_map",
+      "proximity"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "Force and slip distribution from marker displacement on silicone skin; optional proximity cues",
+    "busInterfaces": [
+      "USB",
+      "UVC"
+    ],
+    "softwareSupport": [
+      "ros",
+      "c-cpp-sdk",
+      "python-sdk"
+    ],
+    "samplingRate": {
+      "display": "60 fps (slip detection)",
+      "hz": 60,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "availability": "in-production",
+    "openness": "design-published",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Food handling, delicate grasping, and slip-aware pick-and-place",
+    "notes": "Tokyo startup (founded Oct 2021); technology developed by Akihiko Yamaguchi at Carnegie Mellon University (now Tohoku University assistant professor; FingerVision Chief Executive Researcher and Director). α on β is a finger variant in their vision-based tactile gripper lineup (also Cyl1, SS2, M6). Sold as gripper kits with optional additional sensors. Open research software (GPL-3.0) and CAD at github.com/akihikoy/fingervision — commercial product designs remain proprietary.",
+    "sources": [
+      "https://www.fingervision.jp/en/service-product",
+      "https://www.fingervision.jp/en/about",
+      "https://github.com/akihikoy/fingervision"
+    ],
+    "lastUpdated": "2026-07-31",
+    "license": "GPL-3.0"
+  },
+  {
+    "slug": "paxini-px6ax",
+    "company": "PaXini",
+    "product": "PX-6AX GEN3",
+    "website": "https://paxini.com/en/ax/gen3",
+    "imageUrl": "https://paxini.com/images/Gen3/PX6AX-GEN3-DP-S1813-Elite/1.png",
+    "country": "CN",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map",
+      "net_force_torque"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "hall-magnetic"
+    ],
+    "output": "15 sensing dimensions incl. 6-axis force/torque, texture, and elastic response (Hall-array ITPU chip)",
+    "busInterfaces": [
+      "USB",
+      "SPI",
+      "I2C",
+      "UART"
+    ],
+    "softwareSupport": [
+      "c-cpp-sdk",
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "1000 Hz output rate (1 MHz internal sampling)",
+      "hz": 1000,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "0.1 mm spatial resolution (vendor lab)",
+      "mm": 0.1,
+      "kind": "other"
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "under-100",
+    "priceBasis": "list",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Multi-axis fingertip and palm sensing for dexterous hands and humanoids",
+    "notes": "Shenzhen company (founded 2021); founding team from Waseda University Sugano Lab. 12 fingertip/pad/palm variants (Core/Elite/Omega). China official store list (2026-07): Elite ¥199; Core ¥499–¥699; Omega ¥1,199–¥1,999. PR claims starting US$49. Raw interfaces SPI/I2C/UART; USB via bundled comm board (UART board ¥50 / high-speed board ¥500 on CN store). Official software: PXSR (Windows x64) + C reference examples.",
+    "sources": [
+      "https://paxini.com/en/ax/gen3",
+      "https://www.prnewswire.com/apac/news-releases/paxini-to-debut-at-ces-2026-advancing-embodied-ai-infrastructure-through-tactile-sensing-302649555.html"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "gelslim-4",
+    "company": "University of Michigan (MMint Lab)",
+    "product": "GelSlim 4.0",
+    "website": "https://www.mmintlab.com/research/gelslim-4-0/",
+    "imageUrl": "https://i0.wp.com/www.mmintlab.com/wp-content/uploads/2024/09/teaser_figure.png?w=2340&ssl=1",
+    "country": "US",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "Depth map from internal camera and marker tracking (optional marker optical-flow shear field in software)",
+    "busInterfaces": [
+      "CSI"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Reproducible open visuotactile finger for slip detection and in-hand pose estimation",
+    "notes": "Open-source refresh of GelSlim 3.0 with simplified finger structure and manufacturable lenses; open depth/shear Python packages. Reported material cost ~$65 (down from ~$122 for 3.0; tools/bulk materials extra). Maintained by MMint Lab. GelSlim 3.0 (MIT MCube) is unmaintained—MCube closed and the old repo redirects builders to GelSlim 4.0. Shear is an optional marker optical-flow field (not a published force map). Camera interface appears ribbon/CSI-class (verify against manufacturing BOM when republished).",
+    "sources": [
+      "https://www.mmintlab.com/research/gelslim-4-0/",
+      "https://github.com/MMintLab/gelslim_hardware",
+      "https://github.com/MMintLab/gelslim_depth",
+      "https://github.com/MMintLab/gelslim_shear",
+      "https://arxiv.org/abs/2409.19770",
+      "https://www.andreasipos.xyz/projects/gelslim-4-0"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "omnitact",
+    "company": "UC Berkeley / open research",
+    "product": "OmniTact",
+    "website": "https://sites.google.com/berkeley.edu/omnitact",
+    "imageUrl": "https://lh3.googleusercontent.com/sitesv/AG8ngQVDNsQzORdXPr0utuStGDCFYqRZmowPXk-9Ux4nRNzFuoZamKs_vklUkrP4lTb4mPH6DytA3UubRCU8up6JLKMz7P4286yHko5iHNubNIvAYVxA0RV7UOU8HVh9gU-Oyt2cE3ycevP7wtvLFMjYJTDXg9xxJ0ijltECGkp_F2A1-w9AFl6S_H6SI6SQlgd7u5xuN-yCsN2ZA9MTIKU=w1280",
+    "country": "US",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "Multi-directional high-resolution tactile images from 5 micro-cameras on curved gel skin (400×400 per camera)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "MIT",
+    "priceRange": "2k-10k",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Multi-directional fingertip sensing for dexterous insertion and contact-angle estimation",
+    "notes": "Research prototype (ICRA 2020). MIT license on site covers software and hardware design; STL/CAD meshes published (GitHub stl/, project site Drive). Endoscope micro-cameras (~$600 each; ~$3,200 prototype camera cost) cast into silicone gel. Full manufacturing pack (mold/flex-PCB) completeness not fully verified from public listings.",
+    "sources": [
+      "https://sites.google.com/berkeley.edu/omnitact",
+      "https://github.com/s-tian/bench-press",
+      "https://arxiv.org/abs/2003.06965"
+    ],
+    "lastUpdated": "2026-07-31",
+    "samplingRate": {
+      "display": "30 fps",
+      "hz": 30,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "dimensions": {
+      "display": "Ø30 × 33 mm (sensitive height)",
+      "longestMm": 33
+    }
+  },
+  {
+    "slug": "digitac",
+    "company": "University of Bristol",
+    "product": "DigiTac",
+    "website": "https://github.com/nlepora/digitac-design",
+    "imageUrl": "https://lepora.com/wp-content/uploads/2022/07/fig1.png",
+    "country": "GB",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "DIGIT camera and lighting with 3D-printed TacTip biomimetic skin (marker displacement)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "spatialResolution": {
+      "display": "~0.1 mm pose prediction (edge/surface; DigiTac ~0.16 mm edge / ~0.06 mm depth)",
+      "mm": 0.1,
+      "kind": "localization-error"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "GPL-3.0",
+    "priceRange": "100-500",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Comparing flat GelSight-type vs soft TacTip skins on the same DIGIT electronics",
+    "notes": "Open hardware (GPL-3.0 design files). Requires a DIGIT sensor plus printed TacTip skin mod.",
+    "sources": [
+      "https://github.com/nlepora/digitac-design",
+      "https://lepora.com/digitac/",
+      "https://arxiv.org/abs/2206.13657"
+    ],
+    "lastUpdated": "2026-07-27",
+    "samplingRate": {
+      "display": "60 fps",
+      "hz": 60,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "dimensions": {
+      "display": "36 × 26 × 39 mm",
+      "longestMm": 39
+    },
+    "weight": {
+      "display": "20 g",
+      "grams": 20
+    }
+  },
+  {
+    "slug": "insight",
+    "company": "MPI-IS / open research",
+    "product": "Insight",
+    "website": "https://github.com/Huanbo-Sun/Haptics-for-Robots-Insight",
+    "imageUrl": "https://raw.githubusercontent.com/Huanbo-Sun/Haptics-for-Robots-Insight/master/Pics/InsightStructure.png",
+    "country": "DE",
+    "formFactor": "dome",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "3D directional force-distribution map over conical sensing surface",
+    "busInterfaces": [
+      "CSI"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "spatialResolution": {
+      "display": "0.4 mm",
+      "mm": 0.4,
+      "kind": "localization-error"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "MIT",
+    "priceRange": "undisclosed",
+    "priceBasis": "unknown",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Thumb-sized 3D force sensing with replaceable soft shell",
+    "notes": "Open-source (MIT) design from MPI-IS; combines photometric stereo and structured light. Camera: Raspberry Pi Camera V2 over CSI (not USB). Force magnitude accuracy ~0.03 N, direction ~5°, range ~0.03–2 N (paper). See also miniaturized Minsight successor.",
+    "sources": [
+      "https://github.com/Huanbo-Sun/Haptics-for-Robots-Insight",
+      "https://doi.org/10.1038/s42256-021-00439-3",
+      "https://is.mpg.de/al/projects/insight-a-haptic-sensor-powered-by-vision-and-machine-learning"
+    ],
+    "lastUpdated": "2026-07-27",
+    "dimensions": {
+      "display": "40 mm base dia. × 70 mm",
+      "longestMm": 70
+    },
+    "samplingRate": {
+      "display": "~10 Hz force-map inference (camera 40 fps)",
+      "hz": 10,
+      "kind": "frame",
+      "qualifier": "typical"
+    }
+  },
+  {
+    "slug": "minsight",
+    "company": "MPI-IS / open research",
+    "product": "Minsight",
+    "website": "https://github.com/martius-lab/Minsight-sensor",
+    "imageUrl": "https://raw.githubusercontent.com/martius-lab/Minsight-sensor/main/Images/Minsight.png",
+    "country": "DE",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "3D force distribution over fingertip-sized curved surface at up to 60 Hz (miniaturized Insight)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "ros2"
+    ],
+    "samplingRate": {
+      "display": "60 Hz",
+      "hz": 60,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "dimensions": {
+      "display": "22 mm dia. × 30 mm",
+      "longestMm": 30
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "undisclosed",
+    "priceBasis": "unknown",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Compact fingertip 3D force sensing for dexterous manipulation",
+    "notes": "Open-source manufacturing files; fingertip-sized evolution of Insight (Advanced Intelligent Systems 2023). Force MAE 0.07 N; contact localization error 0.6 mm; USB 3.0 camera.",
+    "sources": [
+      "https://github.com/martius-lab/Minsight-sensor",
+      "https://arxiv.org/abs/2304.10990",
+      "https://doi.org/10.1002/aisy.202300042"
+    ],
+    "lastUpdated": "2026-07-27",
+    "license": "MIT"
+  },
+  {
+    "slug": "flexitac",
+    "company": "Columbia University / open research",
+    "product": "FlexiTac",
+    "website": "https://flexitac.github.io/",
+    "imageUrl": "https://flexitac.github.io/static/images/flexitac.jpg",
+    "country": "US",
+    "formFactor": "sheet",
+    "productType": "sensor",
+    "modalities": [
+      "normal_force_map"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "piezoresistive"
+    ],
+    "output": "Flexible pressure matrix (default 12×32 taxels); 8-bit serial stream via readout board",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "samplingRate": {
+      "display": "100 Hz frame stream via serial (paper); fast firmware uses 2 Mbaud UART (PyPI reports ~100+ fps on 12×32)",
+      "hz": 100,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "2 mm pitch (V2); configurable pad sizes up to 32×32",
+      "mm": 2,
+      "kind": "taxel-pitch"
+    },
+    "dimensions": {
+      "display": "Pad thickness <1 mm"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Dense normal-force maps on grippers, soft fingers, and wearable collectors",
+    "notes": "Open-source FPC–Velostat–FPC laminate with Arduino-based readout (~$30 complete unit per FlexiTac paper Sec. 2.4; V2 pad alone ≈$2.5 on project page). PyPI package `flexitac` provides flashing, streaming, and heatmap tools. Evolved from 3D-ViTac (CoRL 2024). Hardware licensed CC BY-NC 4.0.",
+    "sources": [
+      "https://flexitac.github.io/",
+      "https://github.com/FlexiTac/FlexiTac_Hardware_Repo",
+      "https://arxiv.org/abs/2604.28156",
+      "https://arxiv.org/abs/2410.24091"
+    ],
+    "lastUpdated": "2026-07-27",
+    "license": "CC-BY-NC-4.0"
+  },
+  {
+    "slug": "eflesh",
+    "company": "NYU / open research",
+    "product": "eFlesh",
+    "website": "https://e-flesh.com/",
+    "imageUrl": "https://e-flesh.com/static/images/eflesh_fig1.png",
+    "country": "US",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "triaxial_force_map"
+    ],
+    "shearSensing": "aggregate",
+    "sensingPrinciples": [
+      "hall-magnetic"
+    ],
+    "output": "3D contact force from permanent-magnet displacement measured by magnetometer board",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk"
+    ],
+    "spatialResolution": {
+      "display": "0.5 mm planar (x,y) contact localization RMSE; 0.16 mm depth RMSE (characterization)",
+      "mm": 0.5,
+      "kind": "localization-error"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "MIT",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Customizable magnetic skins for grippers, hands, and feet with tunable compliance",
+    "notes": "Open-source (MIT) 3D-printable cut-cell design. Force RMSE reported as 0.27 N normal and 0.12 N shear. Includes CAD-to-STL conversion tool and Visuo-Skin policy-learning stack. Host streaming via reskin-sensor + QT Py Arduino firmware (5× MLX90393). Magnets <$5; magnetometer board commercially listed ~$25 (third-party; stock varies).",
+    "sources": [
+      "https://e-flesh.com/",
+      "https://github.com/notvenky/eFlesh",
+      "https://arxiv.org/abs/2506.09994"
+    ],
+    "lastUpdated": "2026-07-27",
+    "samplingRate": {
+      "display": "100 Hz (magnetometer stream in policy-learning experiments)",
+      "hz": 100,
+      "kind": "frame",
+      "qualifier": "typical"
+    },
+    "dimensions": {
+      "display": "40×40×24 mm (standard cuboidal characterization instance)",
+      "longestMm": 40
+    }
+  },
+  {
+    "slug": "dm-tac-w2",
+    "company": "Daimon Robotics",
+    "product": "DM-Tac W2",
+    "website": "https://www.dmrobot.com/DM-Tac-W2.html",
+    "imageUrl": "https://www.dmrobot.com/template/index/pc/images/product1/product1.png",
+    "country": "CN",
+    "formFactor": "flat-pad",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry",
+      "triaxial_force_map",
+      "net_force_torque"
+    ],
+    "shearSensing": "per-taxel",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "384 × 288 dense tactile field from a 640 × 480 internal camera (110,592 sensing points): contact geometry plus full-resolution 3D deformation and 3D distributed-force fields, and 6-axis resultant force/torque; vendor also reports texture, hardness and slip",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "vendor-gui"
+    ],
+    "samplingRate": {
+      "display": "120 Hz (max)",
+      "hz": 120,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "384 × 288; ~0.094 mm/point on 36 × 27 mm (L), ~0.063 mm/point on 24 × 18 mm (M); 640 × 480 camera",
+      "mm": 0.094,
+      "kind": "surface-pixel"
+    },
+    "dimensions": {
+      "display": "W2L: 76.5×46×31 mm; W2M: 64×36×20 mm",
+      "longestMm": 76.5
+    },
+    "weight": {
+      "display": "72 g (M) / 131 g (L)"
+    },
+    "availability": "in-production",
+    "openness": "proprietary",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "High-resolution commercial visuotactile pad for contact-rich industrial manipulation",
+    "notes": "Shenzhen/Hong Kong commercial VBTS vendor (HKUST-incubated); W2 shown at CES 2026 and sold by quote plus a JD.com storefront. Two sizes, W2L (36×27 mm sensing area) and W2M (24×18 mm). 0.5 W operating / 0.1 W standby, USB 2.0, IP67, rated 5 million press and 200k friction cycles, sensitivity <1%FS and zero drift <1%FS. Runs on CPU/GPU or Daimon's optional DM-Flux edge compute module, with a bundled visualisation UI. Supersedes the original DM-Tac W (320×240 sensing, 3 million cycles, S/M/L sizes), whose page was removed in the 2026 site redesign. Wider lineup not yet catalogued here: DM-Tac X (compact 41×24×18 mm blade), DM-Tac F and DM-Tac G grippers.",
+    "sources": [
+      "https://www.dmrobot.com/DM-Tac-W2.html",
+      "https://www.dmrobot.com/service.html#download",
+      "https://www.dmrobot.com/about.html",
+      "https://web.archive.org/web/20260210203659/https://www.dmrobot.com/en/product/p1/dm-tac-w2.html",
+      "https://mall.jd.com/index-1000650888.html"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "soft-bubble",
+    "company": "Toyota Research Institute (Punyo) / open research",
+    "product": "Punyo Soft-Bubble Sensor",
+    "website": "https://punyo.tech/bubble-gripper.html",
+    "imageUrl": "https://punyo.tech/images/bubble-gripper.jpg",
+    "country": "US",
+    "formFactor": "dome",
+    "productType": "gripper",
+    "modalities": [
+      "contact_geometry",
+      "triaxial_force_map"
+    ],
+    "shearSensing": "aggregate",
+    "sensingPrinciples": [
+      "vision-based",
+      "mems-barometric"
+    ],
+    "output": "Depth image / point cloud of an inflated latex membrane plus internal air pressure; shear force estimated from optical flow of the printed dot pattern (published as ROS2 topics)",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "ros2",
+      "micro-ros"
+    ],
+    "samplingRate": {
+      "display": "Up to 45 fps (pico flexx ToF, v1.1); reference D405 launch scripts stream 640×480 depth at 30 fps (v2.0)",
+      "hz": 45,
+      "kind": "frame",
+      "qualifier": "max"
+    },
+    "spatialResolution": {
+      "display": "~2 pixels/mm² on the membrane at 50 mm inflation (2019 design, 224×171 ToF imager)"
+    },
+    "dimensions": {
+      "display": "Membrane inflated to 20–75 mm height (50 mm typical at ~0.25 psi); ~175 cm² sensed of a 261 cm² dome (2019 design)"
+    },
+    "availability": "diy",
+    "openness": "open-hardware",
+    "license": "CC-BY-NC-4.0",
+    "priceRange": "500-2k",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Highly compliant large-area contact geometry sensing for soft gripping, handovers, and object pose tracking",
+    "notes": "Not a product: TRI publishes build instructions, BOM (with per-line prices), CAD/STL and a ROS2 stack under CC BY-NC 4.0 (non-commercial). v2.0 uses two Intel RealSense D405 cameras ($272 each on the published BOM) behind latex membranes (BOM lists 0.65 mm sheet; build guide also supports ~0.45 mm); v1.1 used the PMD CamBoard pico flexx ToF. Internal air pressure via SparkFun Qwiic MicroPressure / Honeywell MPR (firmware uses Adafruit MPRLS) over micro-ROS. Camera cost alone exceeds $500 for the two-finger gripper; optional Schunk WSG base is listed at $5,500 on the BOM.",
+    "sources": [
+      "https://punyo.tech/bubble-gripper.html",
+      "https://punyo.tech/downloads/Bubble_Gripper_BOM_v2.0.pdf",
+      "https://github.com/TRI-DNA/punyo-bubble-kit",
+      "https://arxiv.org/abs/1904.02252",
+      "https://arxiv.org/abs/2004.03691"
+    ],
+    "lastUpdated": "2026-07-31"
+  },
+  {
+    "slug": "geltip",
+    "company": "University of Liverpool / open research",
+    "product": "GelTip",
+    "website": "https://danfergo.github.io/geltip/",
+    "imageUrl": "https://danfergo.github.io/geltip/cover.jpg",
+    "country": "GB",
+    "formFactor": "fingertip",
+    "productType": "sensor",
+    "modalities": [
+      "contact_geometry"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "vision-based"
+    ],
+    "output": "All-around tactile images from a camera inside a finger-shaped elastomer; contact mapped to the 3D surface via a cylinder + hemisphere projection model",
+    "busInterfaces": [
+      "USB"
+    ],
+    "softwareSupport": [
+      "none-documented"
+    ],
+    "spatialResolution": {
+      "display": "~5 mm mean contact localization error (≈1 mm best case) in the IROS 2020 evaluation",
+      "mm": 5,
+      "kind": "localization-error"
+    },
+    "dimensions": {
+      "display": "~100 mm total length; 28 mm shell dia.; sensing membrane 40 mm long × 20 mm dia.",
+      "longestMm": 100
+    },
+    "availability": "diy",
+    "openness": "design-published",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Finger-shaped visuotactile sensing that also catches contacts outside the grasp closure",
+    "notes": "Research design from Liverpool smARTLab (Gomes, Lin & Luo, IROS 2020). CAD models and the fabrication guide are published on the project page; the danfergo/geltip GitHub repo holds only data-collection code and carries no license, so reuse terms are unclear. Body is an off-the-shelf 15 mm plastic test tube with XP-565/Slacker elastomer; camera is Microsoft LifeCam Studio electronics with a 170° M12 wide lens. Author BOM estimate ≈ US$100 (OmniTact comparison; not a list price). Separate MuJoCo/Yarok simulation model at danfergo/geltip-simulation.",
+    "sources": [
+      "https://danfergo.github.io/geltip/",
+      "https://arxiv.org/abs/2008.05404",
+      "https://doi.org/10.1109/IROS45743.2020.9340881",
+      "https://arxiv.org/abs/2112.01834",
+      "https://github.com/danfergo/geltip"
+    ],
+    "lastUpdated": "2026-07-31"
+  },
+  {
+    "slug": "takktile",
+    "company": "Harvard Biorobotics Lab / RightHand Robotics (discontinued)",
+    "product": "TakkTile (TakkStrip / TakkArray)",
+    "website": "https://github.com/TakkTile/takktile-boards",
+    "imageUrl": "https://softroboticstoolkit.com/sites/g/files/omnuum4601/files/styles/hwp_1_1__1440x1440_scale/public/sorotoolkit/files/takk_strips.png?itok=gOaIPJbA",
+    "country": "US",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "normal_force_map"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "mems-barometric"
+    ],
+    "output": "Per-taxel normal force from MEMS barometers (MPL115A2) cast under rubber; I2C-addressable strips (TakkStrip) and 5×8 arrays (TakkArray)",
+    "busInterfaces": [
+      "USB",
+      "I2C"
+    ],
+    "softwareSupport": [
+      "python-sdk",
+      "c-cpp-sdk"
+    ],
+    "samplingRate": {
+      "display": ">100 Hz per element (400 kHz I2C, 1.6 ms conversion time); USB bridge ~100 Hz; 125 Hz used in the original characterization",
+      "hz": 100,
+      "kind": "per-taxel",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "8 mm taxel pitch (TakkStrip); TakkArray example 5×8 at 6 mm; lab characterization also used 5 mm end-to-end (closest long-axis pitch ~3×5 mm)",
+      "mm": 8,
+      "kind": "taxel-pitch"
+    },
+    "dimensions": {
+      "display": "TakkStrip 2: 6 MEMS barometers (3 discrete + 3 as a small array) with traffic-cop MCU; typical cast under ~6 mm VytaFlex 20 (characterization used 4/6/10 mm)"
+    },
+    "availability": "discontinued",
+    "openness": "open-hardware",
+    "license": "CC-BY-SA-3.0 (boards) / GPL-3.0-or-later (firmware)",
+    "priceRange": "under-100",
+    "priceBasis": "bom-estimate",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Low-cost, overload-tolerant normal-force taxels embedded in soft fingers and grippers",
+    "notes": "No longer commercially available: RightHand Robotics discontinued TakkStrip 2 and the ReFlex TakkTile grippers, and takktile.com no longer serves the original product site (redirects to a lander). Design stays open — schematics/board layouts CC BY-SA 3.0, firmware GPLv3+ — with Arduino, Python and USB-I2C bridge code on GitHub. ~1 g sensitivity and survives ~11 kg (25 lb) overload. Historic TakkTile Starter Kit was about US$299 (early reports: two 5-taxel TakkStrips plus Arduino bridge; later RHR listings: one TakkStrip plus one TakkStrip 2). Barometers are ~$1 each for DIY builds.",
+    "sources": [
+      "https://github.com/TakkTile/takktile-boards",
+      "https://github.com/TakkTile/TakkTile-usb",
+      "https://softroboticstoolkit.com/book/takktile-sensors",
+      "https://dash.harvard.edu/bitstream/handle/1/22088984/2012_YTenzer_BarometricSensors.pdf?sequence=1",
+      "https://doi.org/10.1109/MRA.2014.2310152",
+      "https://web.archive.org/web/20210128160946/http://www.takktile.com/main:plans",
+      "https://spiral.imperial.ac.uk/server/api/core/bitstreams/2aac37ea-34ce-4346-8bb5-0356206bc820/content"
+    ],
+    "lastUpdated": "2026-07-27"
+  },
+  {
+    "slug": "icub-skin",
+    "company": "Istituto Italiano di Tecnologia (iCub Tech)",
+    "product": "iCub Skin (capacitive skin + MTB interface board)",
+    "website": "https://icub.iit.it/products/product-catalog",
+    "imageUrl": "https://icub.iit.it/documents/175012/176269/blue-skin-round.png/37fa1779-172a-6719-7fa6-83c3e38d5c47?t=1611575593907",
+    "datasheetUrl": "https://icub.iit.it/documents/175012/528824/iCub_Skin_technical_sheet.pdf/2722fca2-7f9e-63e8-7102-086ad9492541",
+    "country": "IT",
+    "formFactor": "skin-patch",
+    "productType": "sensor",
+    "modalities": [
+      "normal_force_map"
+    ],
+    "shearSensing": "none",
+    "sensingPrinciples": [
+      "capacitive"
+    ],
+    "output": "8-bit capacitance per taxel over CAN bus 2.0B (1 Mbps); up to 16 triangular modules × 12 taxels = 192 taxels per MTB microcontroller board (current triangles: 10 pressure taxels + 2 thermal pads)",
+    "busInterfaces": [
+      "CAN"
+    ],
+    "softwareSupport": [
+      "yarp"
+    ],
+    "samplingRate": {
+      "display": "25–250 Hz configurable (50 Hz per-taxel typical on iCub)",
+      "hz": 50,
+      "kind": "per-taxel",
+      "qualifier": "typical"
+    },
+    "spatialResolution": {
+      "display": "~5 mm between taxels; 30 mm-side triangular modules etched on 0.22 mm flexible PCB",
+      "mm": 5,
+      "kind": "taxel-pitch"
+    },
+    "dimensions": {
+      "display": "Triangle 30 mm side on 0.22 mm flex PCB; MTB board 25.5 × 17.4 × 7 mm",
+      "longestMm": 30
+    },
+    "weight": {
+      "display": "Triangle 0.3 g; MTB board 2 g"
+    },
+    "availability": "made-to-order",
+    "openness": "software-only-open",
+    "priceRange": "undisclosed",
+    "priceBasis": "quote-only",
+    "evaluationStatus": "public-info-only",
+    "bestUseCase": "Large-area whole-body tactile coverage on humanoids for safe physical human-robot interaction",
+    "notes": "Supplied by IIT on request — listed in the iCub product catalog with quotes by enquiry (no standalone price; indicative full iCub is €250k). Patches can be cut from the triangular panel and conformed to 3D surfaces; on iCub it is deployed as 18 patches totalling roughly 2,000 taxels. Silicone foam dielectric with a conductive Lycra ground layer. Software stack is open (YARP/robotology) and hardware docs are public, but CAD is not distributed as open hardware. Also integrated/customized for third-party platforms (e.g. Nao, Barrett WAM, Schunk arms).",
+    "sources": [
+      "https://icub.iit.it/products/product-catalog",
+      "https://icub.iit.it/documents/175012/528824/iCub_Skin_technical_sheet.pdf/2722fca2-7f9e-63e8-7102-086ad9492541",
+      "https://mesh-iit.github.io/documentation/tactile_sensors/hardware/physical_sensors/",
+      "https://cdn.intechopen.com/pdfs/40053/InTech-Large_scale_capacitive_skin_for_robots.pdf"
+    ],
+    "lastUpdated": "2026-07-27"
+  }
+]

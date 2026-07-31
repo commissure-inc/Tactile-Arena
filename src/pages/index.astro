@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SensorTable } from "../components/SensorTable";
+import { getSensors } from "../lib/sensors";
+import { SITE_TITLE } from "../lib/site";
+
+const sensors = getSensors();
+---
+
+<BaseLayout title={SITE_TITLE}>
+  <SensorTable client:load sensors={sensors} />
+</BaseLayout>
