@@ -26,6 +26,10 @@ const {
 const fullTitle = title === SITE_TITLE ? title : `${title} — ${SITE_TITLE}`;
 const origin = Astro.site?.origin ?? "http://localhost:4321";
 const canonicalUrl = new URL(canonicalPath, origin).href;
+/** Cloudflare Web Analytics site token (public; set at build time). */
+const cfBeaconToken = import.meta.env.PROD
+  ? import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN
+  : undefined;
 ---
 
 <!doctype html>
@@ -102,5 +106,16 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
         </p>
       </div>
     </footer>
+
+    {
+      cfBeaconToken && (
+        <script
+          is:inline
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token":"${cfBeaconToken}"}`}
+        ></script>
+      )
+    }
   </body>
 </html>

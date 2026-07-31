@@ -31,6 +31,8 @@ jobs:
       - run: npm ci
       - run: npm run validate
       - run: npm run build
+        env:
+          PUBLIC_CF_WEB_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CF_WEB_ANALYTICS_TOKEN }}
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
