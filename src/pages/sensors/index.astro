@@ -1,3 +1,5 @@
 ---
-return Astro.redirect("/");
+import { withBase } from "../../lib/site";
+
+return Astro.redirect(withBase("/"));
 ---

@@ -12,3 +12,9 @@ export const COMMISSURE_URL = "https://commissure.co.jp/";
 
 export const SITE_DESCRIPTION =
   "A catalog for comparing robot tactile sensors — modality, protocol, price range, and integration notes.";
+
+/** Prefix a site-root-relative path with the configured Astro `base`. */
+export function withBase(path: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  return `${base}/${path.replace(/^\//, "")}`;
+}

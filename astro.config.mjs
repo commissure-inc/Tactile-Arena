@@ -6,7 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sensors.commissure.ai",
+  site: "https://commissure-inc.github.io",
+  base: "/Tactile-Arena",
   integrations: [react()],
 
   vite: {

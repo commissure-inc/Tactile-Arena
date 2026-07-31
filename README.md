@@ -4,7 +4,9 @@ A public catalog for exploring and comparing **robot tactile sensors** — visio
 
 ## Live site
 
-https://sensors.commissure.ai/
+https://commissure-inc.github.io/Tactile-Arena/
+
+Deployed from `main` by [GitHub Actions](.github/workflows/deploy.yml) to GitHub Pages.
 
 ## Repository contents
 

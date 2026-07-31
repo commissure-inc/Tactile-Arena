@@ -9,6 +9,7 @@ import {
   REPO_URL,
   SITE_DESCRIPTION,
   SITE_TITLE,
+  withBase,
 } from "../lib/site";
 
 interface Props {
@@ -45,7 +46,7 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
     <meta name="twitter:description" content={description} />
     <meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0E1116" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml" />
     <script is:inline>
       (function () {
         try {
@@ -62,7 +63,7 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
 
     <header class="site-header">
       <div class="site-shell site-header__inner">
-        <a class="site-header__title" href="/">{SITE_TITLE}</a>
+        <a class="site-header__title" href={withBase("/")}>{SITE_TITLE}</a>
         <span class="site-header__meta">
           v{APP_VERSION}
           <span class="beta-badge">Beta</span>

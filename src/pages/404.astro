@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/site";
 ---
 
 <BaseLayout title="Page not found">
   <section class="not-found">
     <h1 class="not-found__title">404</h1>
     <p class="not-found__lead">This page does not exist.</p>
-    <a href="/">Back to home</a>
+    <a href={withBase("/")}>Back to home</a>
   </section>
 </BaseLayout>
