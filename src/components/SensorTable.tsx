@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   SensorFilters,
   SortDirection,
@@ -48,6 +48,9 @@ const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: "samplingRate", label: "Sampling rate" },
   { key: "spatialResolution", label: "Spatial resolution" },
 ];
+
+/** Matches the breakpoint where the filter sidebar turns into an off-canvas drawer. */
+const COMPACT_QUERY = "(max-width: 1024px)";
 
 function countActiveFilters(filters: SensorFilters): number {
   return Object.values(filters).reduce((sum, values) => sum + values.length, 0);
@@ -240,6 +243,8 @@ export function SensorTable({ sensors }: SensorTableProps) {
   const [query, setQuery] = useState("");
   const [viewMode, setViewMode] = useState<ViewMode>("cards");
   const [detailSensor, setDetailSensor] = useState<TactileSensor | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const filterToggleRef = useRef<HTMLButtonElement>(null);
 
   const activeFilterCount = countActiveFilters(filters);
   const filterOptions = useMemo(() => buildFilterOptions(sensors), [sensors]);
@@ -279,6 +284,34 @@ export function SensorTable({ sensors }: SensorTableProps) {
     [filtered, sortKey, sortDirection],
   );
 
+  const closeFilters = () => {
+    setFiltersOpen(false);
+    filterToggleRef.current?.focus();
+  };
+
+  /** Widening the viewport turns the drawer back into a sidebar, so drop the open state with it. */
+  useEffect(() => {
+    const compact = window.matchMedia(COMPACT_QUERY);
+    const sync = () => {
+      if (!compact.matches) setFiltersOpen(false);
+    };
+    compact.addEventListener("change", sync);
+    return () => compact.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!filtersOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeFilters();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.body.classList.add("has-open-drawer");
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.classList.remove("has-open-drawer");
+    };
+  }, [filtersOpen]);
+
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {
       setSortDirection((prev) => (prev === "asc" ? "desc" : "asc"));
@@ -304,10 +337,42 @@ export function SensorTable({ sensors }: SensorTableProps) {
         onChange={setFilters}
         onClear={() => setFilters(EMPTY_FILTERS)}
         activeCount={activeFilterCount}
+        open={filtersOpen}
+        onClose={closeFilters}
+        resultCount={visible.length}
+      />
+
+      <div
+        className={`filter-scrim ${filtersOpen ? "filter-scrim--visible" : ""}`}
+        role="presentation"
+        onClick={closeFilters}
       />
 
       <div className="sensor-table-main">
         <div className="sensor-table-toolbar">
+          <button
+            type="button"
+            ref={filterToggleRef}
+            className={`filter-toggle ${activeFilterCount > 0 ? "filter-toggle--active" : ""}`}
+            aria-expanded={filtersOpen}
+            aria-controls="filter-panel"
+            onClick={() => setFiltersOpen(true)}
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path
+                d="M2 4h12M4 8h8M6.5 12h3"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+            Filters
+            {activeFilterCount > 0 && (
+              <span className="filter-toggle__count">{activeFilterCount}</span>
+            )}
+          </button>
+
           <div className="view-toggle" role="tablist" aria-label="Display mode">
             <button
               type="button"
