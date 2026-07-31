@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import CommissureLogo from "../components/CommissureLogo.astro";
-import { ThemeSwitch } from "../components/ThemeSwitch";
 import {
   APP_VERSION,
   COMMISSURE_URL,
@@ -30,7 +29,8 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<!-- The Light/Dark switch is temporarily disabled; the site is pinned to the light theme. -->
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,19 +44,8 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0E1116" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#F4F5F7" />
     <link rel="icon" href={withBase("/favicon.svg")} type="image/svg+xml" />
-    <script is:inline>
-      (function () {
-        try {
-          var t = localStorage.getItem("commissure-theme");
-          if (t === "light" || t === "dark") {
-            document.documentElement.setAttribute("data-theme", t);
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -70,7 +59,6 @@ const canonicalUrl = new URL(canonicalPath, origin).href;
           · updated {LAST_UPDATED}
         </span>
         <span class="site-header__spacer"></span>
-        <ThemeSwitch client:load />
         <a
           href={COMMISSURE_URL}
           class="maintainer-link"
