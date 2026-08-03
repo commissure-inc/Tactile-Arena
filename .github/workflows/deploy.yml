@@ -30,14 +30,18 @@ jobs:
 
       - run: npm ci
       - run: npm run validate
+
+      # Not published from here anymore, but a tree that fails to build would
+      # break the live site. Catch it before the rebuild is triggered.
       - run: npm run build
-        env:
-          PUBLIC_CF_WEB_ANALYTICS_TOKEN: ${{ vars.PUBLIC_CF_WEB_ANALYTICS_TOKEN }}
+
+      # Pages serves a redirect to the canonical location instead.
+      - run: npm run build:redirect
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
 
   deploy:
     needs: build

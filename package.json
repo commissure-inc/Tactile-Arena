@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "validate": "node scripts/validate.ts",
+    "build:redirect": "node scripts/build-redirect.ts",
     "astro": "astro"
   },
   "dependencies": {
