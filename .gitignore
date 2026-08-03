@@ -1,5 +1,6 @@
 # Build output
 dist/
+_site/
 
 # Astro generated types and cache
 .astro/

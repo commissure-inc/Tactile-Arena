@@ -4,9 +4,12 @@ A public catalog for exploring and comparing **robot tactile sensors** — visio
 
 ## Live site
 
-https://commissure-inc.github.io/Tactile-Arena/
+https://commissure.co.jp/Tactile-Arena/
 
-Deployed from `main` by [GitHub Actions](.github/workflows/deploy.yml) to GitHub Pages.
+The catalog is built from `main` and served from commissure.co.jp. A push to
+`main` runs [GitHub Actions](.github/workflows/deploy.yml), which validates the
+data, then triggers a rebuild there. The former address,
+`commissure-inc.github.io/Tactile-Arena`, redirects to the one above.
 
 ## Repository contents
 
